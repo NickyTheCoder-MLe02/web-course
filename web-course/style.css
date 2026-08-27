@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1 {
+    color: darkblue;
+    font-size: 40px;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+#main-header {
+    color: red;
+}
+
+a:hover {
+    color: green;
+}
+
+.card {
+    width: 200px;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 10px;
+}
