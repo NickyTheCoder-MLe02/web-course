@@ -1,12 +1,138 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
+    <title>My Web Course</title>
 </head>
+
 <body>
-<h1>Hello Minecraft</h1>
-<p>Im gay</p>
+
+    <header>
+        <h1>My Web Course</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+    </nav>
+
+    <main>
+
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>Hello! This is my first web page.</p>
+            <p>I am learning Web Design and Programming.</p>
+
+            <a href="https://www.google.com">Visit Google</a>
+
+            <br><br>
+
+            <img src="https://via.placeholder.com/200" alt="Placeholder image">
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+
+            <ul>
+                <li>Python</li>
+                <li>Data Science</li>
+                <li>Machine Learning</li>
+            </ul>
+        </section>
+
+        <section id="models">
+
+            <h2>Model Performance</h2>
+
+            <table border="1">
+
+                <caption>Model performance comparison</caption>
+
+                <thead>
+                    <tr>
+                        <th colspan="2">Model Information</th>
+                        <th>Performance</th>
+                    </tr>
+                    <tr>
+                        <th>Model</th>
+                        <th>Type</th>
+                        <th>Accuracy</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Logistic Regression</td>
+                        <td>Linear</td>
+                        <td>0.91</td>
+                    </tr>
+
+                    <tr>
+                        <td>Random Forest</td>
+                        <td>Tree</td>
+                        <td>0.94</td>
+                    </tr>
+
+                    <tr>
+                        <td>Neural Network</td>
+                        <td>Deep Learning</td>
+                        <td>0.96</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <section id="predict">
+
+            <h2>House Price Prediction</h2>
+
+            <form action="/predict" method="get">
+
+                <label for="address">Address</label>
+                <input id="address" name="address" type="text" required>
+
+                <br><br>
+
+                <label for="bedrooms">Bedrooms</label>
+                <input id="bedrooms" name="bedrooms" type="number" required>
+
+                <br><br>
+
+                <label for="city">City</label>
+                <select id="city" name="city">
+                    <option value="hn">Hanoi</option>
+                    <option value="hcm">Ho Chi Minh City</option>
+                </select>
+
+                <br><br>
+
+                <p>Property type:</p>
+
+                <input id="house" name="property_type" type="radio" value="house">
+                <label for="house">House</label>
+
+                <input id="apartment" name="property_type" type="radio" value="apartment">
+                <label for="apartment">Apartment</label>
+
+                <br><br>
+
+                <button type="submit">Predict</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Web Design and Programming - Week 2</p>
+    </footer>
+
 </body>
+
 </html>
