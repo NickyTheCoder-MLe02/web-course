@@ -10,10 +10,16 @@ form.addEventListener("submit", function (event) {
 
     let bedrooms = document.querySelector("#bedrooms").value;
 
+    let existingError = form.querySelector(".error-message");
+    if (existingError) {
+        existingError.remove();
+    }
+
     if (bedrooms === "" || Number(bedrooms) <= 0) {
         let error = document.createElement("p");
         error.textContent = "Cốc cốc, mở cửa cho anh đê, để cho anh cưa nhá";
         error.style.color = "red";
+        error.className = "error-message";
         form.appendChild(error);
     } else {
         console.log("Form is valid - ready to send.");
