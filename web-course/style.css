@@ -22,8 +22,23 @@ a:hover {
 }
 
 .card {
-    width: 200px;
-    padding: 20px;
-    border: 2px solid black;
-    margin: 10px;
+    flex: 1 1 200px;
+    padding: 14px;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+    background: white;
 }
+
+.dashboard {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+}
+
