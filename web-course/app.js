@@ -76,3 +76,23 @@ async function loadUsers() {
     }
 }
 loadUsers();
+
+
+async function loadPosts() {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users");
+        const posts = await response.json();
+        const postList = document.querySelector("#post-list");
+        posts.slice(0, 5).forEach(function(post) {
+            const card = document.createElement("div");
+            card.innerHTML = `
+                <h3>${post.title}</h3>
+                <p>${post.body}</p>
+            `;
+            postList.appendChild(card);
+        });
+            
+    } catch (error) {console.error("Loi rui: " + error);}
+}
+
+loadPosts();
