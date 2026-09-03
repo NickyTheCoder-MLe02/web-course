@@ -26,25 +26,42 @@
 //     }
 // });
 
-function fakeRequest() {
-    return new Promise(function(resolve, reject) {
-        setTimeout(function() {
-            resolve("ok nhe");
-        }, 2000);
-    });
+// function fakeRequest() {
+//     return new Promise(function(resolve, reject) {
+//         setTimeout(function() {
+//             resolve("ok nhe");
+//         }, 2000);
+//     });
+// }
+
+// console.log("Start");
+
+// fakeRequest()
+//     .catch(function(data) {
+//         console.log(data);
+//     });
+
+// console.log("End");
+
+// async function getData(){
+//     try {
+//         const data = await fakeRequest();
+//         console.log(data);
+//     } catch (error) {
+//         console.error("loi roi nhe: ", error);
+//     }
+// }
+// getData();
+
+
+async function loadUsers() {
+    try{
+        const response = await fetch("https://jsonplaceholder.typicode.com/users");
+        // console.log(response);
+        const users = await response.json();
+        console.log(users);
+    } catch (error) {
+        console.error("Loi rui: " + error);
+    }
 }
-
-console.log("Start");
-
-fakeRequest()
-    .catch(function(data) {
-        console.log(data);
-    });
-
-console.log("End");
-
-async function getData(){
-    const data = await fakeRequest();
-    console.log(data);
-}
-getData();
+loadUsers();
