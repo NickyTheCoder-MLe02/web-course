@@ -1,27 +1,50 @@
-let title = document.querySelector("#main-title");
+// let title = document.querySelector("#main-title");
 
-console.log(title);
-console.log(title.textContent);
+// console.log(title);
+// console.log(title.textContent);
 
-let form = document.querySelector("#house-form");
+// let form = document.querySelector("#house-form");
 
-form.addEventListener("submit", function (event) {
-    event.preventDefault();
+// form.addEventListener("submit", function (event) {
+//     event.preventDefault();
 
-    let bedrooms = document.querySelector("#bedrooms").value;
+//     let bedrooms = document.querySelector("#bedrooms").value;
 
-    let existingError = form.querySelector(".error-message");
-    if (existingError) {
-        existingError.remove();
-    }
+//     let existingError = form.querySelector(".error-message");
+//     if (existingError) {
+//         existingError.remove();
+//     }
 
-    if (bedrooms === "" || Number(bedrooms) <= 0) {
-        let error = document.createElement("p");
-        error.textContent = "Cốc cốc, mở cửa cho anh đê, để cho anh cưa nhá";
-        error.style.color = "red";
-        error.className = "error-message";
-        form.appendChild(error);
-    } else {
-        console.log("Form is valid - ready to send.");
-    }
-});
+//     if (bedrooms === "" || Number(bedrooms) <= 0) {
+//         let error = document.createElement("p");
+//         error.textContent = "Cốc cốc, mở cửa cho anh đê, để cho anh cưa nhá";
+//         error.style.color = "red";
+//         error.className = "error-message";
+//         form.appendChild(error);
+//     } else {
+//         console.log("Form is valid - ready to send.");
+//     }
+// });
+
+function fakeRequest() {
+    return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            resolve("ok nhe");
+        }, 2000);
+    });
+}
+
+console.log("Start");
+
+fakeRequest()
+    .catch(function(data) {
+        console.log(data);
+    });
+
+console.log("End");
+
+async function getData(){
+    const data = await fakeRequest();
+    console.log(data);
+}
+getData();
